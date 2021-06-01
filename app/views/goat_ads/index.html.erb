@@ -2,7 +2,7 @@
 
 <ul>
   <% @goat_ads.each do |goat_ad| %>
-    <li> <%= goat_ad.name %> </li>
+    <li> <%= link_to goat_ad.name, goat_ad %> </li>
     <li> <%= goat_ad.age %> </li>
     <li> <%= goat_ad.address %> </li>
     <li> <%= goat_ad.longitude %> </li>
@@ -15,3 +15,4 @@
     <li> <%= goat_ad.end_available %> </li>
   <% end %>
 </ul>
+
