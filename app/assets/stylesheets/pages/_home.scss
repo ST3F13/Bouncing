@@ -1,1 +1,59 @@
 // Specific CSS for your home-page
+*{
+  margin: 0 auto;
+}
+.navigation {
+  width:80%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 50px;
+}
+
+.navigation a{
+  color:#707070;
+  text-decoration:none;
+}
+
+.navigation  li{
+  display:inline;
+  padding: 0 20px 0 20px;
+}
+.navigation  li .search_bar{
+  padding: 5px 30px;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.navigation  #branding{
+  float:left;
+  padding-left: 20px;
+  margin-top:15px;
+}
+
+.navigation  #branding h1{
+	font-size:14px;
+	margin-top:15px;
+}
+
+.navigation  nav{
+  float:right;
+  margin-top:15px;
+  font-size:14px;
+  font-color:grey;
+}
+
+.navigation  .highlight, .navigation  .current a{
+  color:blue;
+}
+
+.navigation  a:hover{
+  color:#000000;
+  font-size: 14px;
+  text-decoration: none
+}
+
+.container{
+  width: 80%;
+  height: 400px;
+}
+
