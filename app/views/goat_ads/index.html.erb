@@ -1,0 +1,17 @@
+<h1>INDEX</h1>
+
+<ul>
+  <% @goat_ads.each do |goat_ad| %>
+    <li> <%= goat_ad.name %> </li>
+    <li> <%= goat_ad.age %> </li>
+    <li> <%= goat_ad.address %> </li>
+    <li> <%= goat_ad.longitude %> </li>
+    <li> <%= goat_ad.latitude %> </li>
+    <li> <%= goat_ad.description %> </li>
+    <li> <%= goat_ad.price_per_day %> </li>
+    <li> <%= goat_ad.features %> </li>
+    <li> <%= goat_ad.medias %> </li>
+    <li> <%= goat_ad.start_available %> </li>
+    <li> <%= goat_ad.end_available %> </li>
+  <% end %>
+</ul>
