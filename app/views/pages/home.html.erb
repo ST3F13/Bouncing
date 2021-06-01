@@ -1,2 +1,40 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="navigation">
+  <div id="branding">
+    <a href="#">BOUCING</a>
+  </div>
+  <nav>
+    <ul>
+      <li><input type="text" placeholder="Search.."></li>
+      <li class="current"><a href="#">Rent your goat</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="container">
+  <h1>Get your goat </h1>
+  <h2>& got your guest</h2>
+  <input type="text" placeholder="Search..">
+  <input type="submit">
+</div>
+
+<div class="container">
+<h3>Top category</h3>
+ <ul>
+ <% @goat_ads.each do |goat_ad| %>
+     <li> <%= goat_ad.features %> </li>
+  <% end %>
+ </ul>
+</div>
+
+<div class="container">
+<h3>Most popular</h3>
+ <ul>
+ <% @goat_ads.each do |goat_ad| %>
+     <li> <%= link_to goat_ad.name, goat_ad %> <%= goat_ad.price_per_day%>€ </li>
+  <% end %>
+ </ul>
+</div>
+
+
+
