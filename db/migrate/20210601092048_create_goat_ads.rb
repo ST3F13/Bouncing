@@ -10,7 +10,6 @@ class CreateGoatAds < ActiveRecord::Migration[6.0]
       t.integer :price_per_day
       t.string :features
       t.string :medias
-      t.references :user_id, null: false, foreign_key: true
       t.date :start_available
       t.date :end_available
 
