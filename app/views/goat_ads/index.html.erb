@@ -1,18 +1,20 @@
-<h1>INDEX</h1>
+<div class="index">
 
-<ul>
-  <% @goat_ads.each do |goat_ad| %>
-    <li> <%= link_to goat_ad.name, goat_ad %> </li>
-    <li> <%= goat_ad.age %> </li>
-    <li> <%= goat_ad.address %> </li>
-    <li> <%= goat_ad.longitude %> </li>
-    <li> <%= goat_ad.latitude %> </li>
-    <li> <%= goat_ad.description %> </li>
-    <li> <%= goat_ad.price_per_day %> </li>
-    <li> <%= goat_ad.features %> </li>
-    <li> <%= goat_ad.media %> </li>
-    <li> <%= goat_ad.start_available %> </li>
-    <li> <%= goat_ad.end_available %> </li>
-  <% end %>
-</ul>
+    <% @goat_ads.each do |goat_ad| %>
+      <hr class ="space">
+      <br>
+      <p class="center"><%= link_to goat_ad.name, goat_ad %> </p>
+      <p><strong>Age : </strong><%= goat_ad.age %> years old</p>
+      <p><strong>Address : </strong><%= goat_ad.address %> </p>
+      <p><strong>Longitude : </strong><%= goat_ad.longitude %> </p>
+      <p><strong>Latitude: </strong><%= goat_ad.latitude %> </p>
+      <p><strong>Description : </strong><%= goat_ad.description %> </p>
+      <p><strong>Price : </strong><%= goat_ad.price_per_day %> </p>
+      <p><strong>Features : </strong><%= goat_ad.features %> </p>
+      <p><strong>Medias : </strong><%= cl_image_tag(goat_ad.media.key, height: 300, width: 400, crop: :fill) %> </p>
+      <p><strong>Available from : </strong><%= goat_ad.start_available %> </p>
+      <p><strong>to : </strong><%= goat_ad.end_available %> </p>
+      <hr>
 
+    <% end %>
+</div>
