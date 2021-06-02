@@ -1,39 +1,45 @@
-<div class="navigation">
-  <div id="branding">
-    <a href="#">BOUCING</a>
-  </div>
-  <nav>
-    <ul>
-      <li><input type="text" class="search_bar" placeholder="Search.."></li>
-      <li class="current"><a href="#">Rent your goat</a></li>
-      <li><a href="#">Login</a></li>
-    </ul>
-  </nav>
-</div>
 
-<div class="container">
+
+<div class="banner">
+  <div class="container-box1">
   <h1>Get your goat </h1>
-  <h2>& got your guest</h2>
-  <input type="text" placeholder="Search..">
-  <input type="submit">
+  <h2>      & got your guest</h2>
+    <div class="form">
+      <input type="text" class="searchgoat" placeholder="Where..">|
+      <input type="text" class="searchgoat" placeholder="When..">|
+      <input type="text" class="searchgoat" placeholder="When..">|
+      <input type="submit" id="submit">
+    </div>
+  </div>
+  <div class="container-box2">
+   <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", style: 'width:30%' %>
+  </div>
 </div>
 
-<div class="container">
+
+<div class="container-box">
 <h3>Top category</h3>
- <ul>
+<div class="cards1">
  <% @goat_ads.each do |goat_ad| %>
-     <li> <%= goat_ad.features %> </li>
+     <div class="card-category"> <%= goat_ad.features %> </div>
   <% end %>
- </ul>
+ </div>
 </div>
 
-<div class="container">
+<div class="container-box">
 <h3>Most popular</h3>
- <ul>
+<div class="cards">
  <% @goat_ads.each do |goat_ad| %>
-     <li> <%= link_to goat_ad.name, goat_ad %> <%= goat_ad.price_per_day%>€ </li>
+ <div class="card" style="width: 18rem;">
+  <div class="card-img-top"> <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", style: 'width:60%'%></div>
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to goat_ad.name, goat_ad %></h5>
+    <p class="card-text"><%=goat_ad.features%></p>
+    <a href="#" class="btn btn-primary"><%= goat_ad.price_per_day%>€ </a>
+  </div>
+</div>
   <% end %>
- </ul>
+ </div>
 </div>
 
 
