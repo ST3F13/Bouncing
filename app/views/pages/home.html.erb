@@ -20,9 +20,11 @@
 <div class="container-box">
 <h3>Top category</h3>
 <div class="cards1">
- <% @goat_ads.each do |goat_ad| %>
+ <% @goat_ads.first(5).each do |goat_ad| %>
      <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= link_to goat_ad.features, goat_ads_path %> </div>
   <% end %>
+
+
  </div>
 </div>
 
