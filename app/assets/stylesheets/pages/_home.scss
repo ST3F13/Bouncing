@@ -1,16 +1,40 @@
 // Specific CSS for your home-page
 *{
   margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
 }
+
+body{
+  background: white;;
+}
+
+h1,h3{
+  font-weight: bold;
+}
+
+h1{
+  font-size: 46px;
+}
+h2{
+  font-weight: 400;
+  font-size: 20px;
+  padding-left: 150px;
+}
+
+h3{
+  margin-top: 15px;
+}
+
 .navigation {
   width:80%;
   margin-top: 20px;
   margin-bottom: 20px;
   height: 50px;
+  background-color: white;
 }
 
 .navigation a{
-  color:#707070;
   text-decoration:none;
 }
 
@@ -39,11 +63,10 @@
   float:right;
   margin-top:15px;
   font-size:14px;
-  font-color:grey;
 }
 
 .navigation  .highlight, .navigation  .current a{
-  color:blue;
+  color:rgb(36, 87, 6);
 }
 
 .navigation  a:hover{
@@ -52,8 +75,119 @@
   text-decoration: none
 }
 
-.container{
-  width: 80%;
-  height: 400px;
+.banner{
+  padding: 200px 300px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.container-box1{
+  width: 70%;
+  padding-left: 40px;
+
+}
+.container-box2{
+  width: 30%;
+  padding-bottom: 150px;
 }
 
+.container-box2 img{
+  position: absolute;
+  right:270px;
+  top:110px;
+}
+
+.container li {
+  display: inline;
+  border: 1px solid grey;
+}
+
+.container-box{
+  width: 1220px;
+  margin:20px auto;
+  display: block;
+}
+
+.searchgoat {
+  padding: 15px;
+  margin: -30px;
+  border-radius: 20px;
+  border: 0px solid rgb(14, 14, 14);
+  background: rgb(240, 239, 239);
+
+}
+
+.form {
+  margin-top: 50px;
+  padding-left: 20px;
+}
+
+#submit{
+  border-radius: 20px;
+  padding: 16px 25px;
+  margin: -30px;
+  border: 0px;
+  background:rgb(14, 14, 14);
+  color: white;
+}
+
+.cards1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 100px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-bottom: 10px;
+  padding: 100px 0;
+}
+
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 160px;
+  width: 200px;
+  padding:30px;
+  display: flex;
+  color:white;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+
+.card{
+  border-radius: 20px;
+  border:0px solid;
+  margin: 10px;
+  height: 400px;
+  box-shadow:
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 100px 80px rgba(0, 0, 0, 0.07);
+}
+.card-img-top{
+  text-align: center;
+  background: rgb(240, 239, 239);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+}
+.card-img-top img{
+  background:rgb(240, 239, 239) ;
+
+}
+
+.card-title a{
+  color:black;
+}
+
+.btn {
+  padding: 5px 25px;
+  border-radius: 5px;
+}

@@ -9,7 +9,7 @@
     <p> <%= @goat_ad.description %> </p>
     <p> <%= @goat_ad.price_per_day %> </p>
     <p> <%= @goat_ad.features %> </p>
-    <p> <%= @goat_ad.media %> </p>
+    <p> <%= cl_image_tag(@goat_ad.media.key, height: 300, width: 400, crop: :fill) %> </p>
     <p> <%= @goat_ad.start_available %> </p>
     <p> <%= @goat_ad.end_available %> </p>
 
