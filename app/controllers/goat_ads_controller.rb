@@ -1,5 +1,4 @@
 class GoatAdsController < ApplicationController
-
   def index
     @goat_ads = GoatAd.all
   end
