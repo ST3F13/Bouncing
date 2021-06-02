@@ -1,6 +1,6 @@
-<h1>INDEX</h1>
+<h1>Categories</h1>
 
-<ul>
+<!-- <ul>
   <% @goat_ads.each do |goat_ad| %>
     <li> <%= link_to goat_ad.name, goat_ad %> </li>
     <li> <%= goat_ad.age %> </li>
@@ -14,5 +14,44 @@
     <li> <%= goat_ad.start_available %> </li>
     <li> <%= goat_ad.end_available %> </li>
   <% end %>
-</ul>
+</ul> -->
+<ul>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Caategory</title>
+    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
 
+    <div class="navbar-minimalist">
+      <!-- <img src="images/logo.png"> -->
+    </div>
+
+    <div class="content">
+      <div class="cards">
+        <% @goat_ads.each do |goat_ad| %>
+        <div class="card">
+
+          <div class="card-image">
+            <%= image_tag "https://i.ytimg.com/vi/3wvatkyji1w/maxresdefault.jpg" %>
+          </div>
+          <div class="card-info">
+            <h3><%= goat_ad.name %></h3>
+            <p><%= goat_ad.description %></p>
+            <p><%= goat_ad.price_per_day %>€/day</p>
+          </div>
+        </div>
+
+      <% end %>
+
+      </div>
+      <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoic3QzZjEzIiwiYSI6ImNrcGZibnlzYzI1cngybm54YXR6NjUzYnAifQ.O3t4Fcgt-UtSRdHYLX2Ekg'>
+    </div>
+  </body>
+</html>
+</ul>

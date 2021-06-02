@@ -1,0 +1,39 @@
+// .content {
+//   display: flex;
+// }
+// .cards {
+//   flex-grow: 1;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+// }
+
+// #map {
+//   height: 100vh;
+//   position: sticky;
+//   top: 0;
+// }
+
+// #gmap_map {
+//   flex: 0 0 450px;
+//   height: 100vh;
+//   position: sticky !important;
+//   top: 0 !important;
+// }
+
+// @media (min-width: 100px) and (max-width: 575px) {
+//   .cards {
+//     grid-template-columns: 1fr;
+//   }
+//   #map {
+//     display: none;
+//   }
+// }
+
+// @media (min-width: 576px) {
+//   .cards {
+//     grid-template-columns: 1fr 1fr;
+//   }
+//   #map {
+//     display: none;
+//   }
+// }
