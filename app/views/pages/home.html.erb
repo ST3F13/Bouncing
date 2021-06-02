@@ -6,8 +6,8 @@
   <h2>      & got your guest</h2>
     <div class="form">
       <input type="text" class="searchgoat" placeholder="Where..">|
-      <input type="text" class="searchgoat" placeholder="When..">|
-      <input type="text" class="searchgoat" placeholder="When..">|
+      <input type="date" class="searchgoat" placeholder="When..">|
+      <input type="date" class="searchgoat" placeholder="When..">|
       <input type="submit" id="submit">
     </div>
   </div>
@@ -21,7 +21,7 @@
 <h3>Top category</h3>
 <div class="cards1">
  <% @goat_ads.each do |goat_ad| %>
-     <div class="card-category"> <%= goat_ad.features %> </div>
+     <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= goat_ad.features %> </div>
   <% end %>
  </div>
 </div>

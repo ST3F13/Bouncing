@@ -141,7 +141,8 @@ h3{
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 18px;
+  grid-gap: 16px;
+  margin-bottom: 10px;
   padding: 100px 0;
 }
 
@@ -149,7 +150,6 @@ h3{
 .card-category {
   background-size: cover;
   background-position: center;
-  background-image: url(https://source.unsplash.com/featured/?goat);
   height: 160px;
   width: 200px;
   padding:30px;
@@ -159,14 +159,28 @@ h3{
   align-items: center;
   font-weight: bold;
   border-radius: 10px;
+  text-transform: capitalize;
 }
 
 .card{
   border-radius: 20px;
+  border:0px solid;
+  margin: 10px;
+  height: 400px;
+  box-shadow:
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 100px 80px rgba(0, 0, 0, 0.07);
 }
 .card-img-top{
-  padding-top: 15px;;
   text-align: center;
+  background: rgb(240, 239, 239);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+}
+.card-img-top img{
+  background:rgb(240, 239, 239) ;
+
 }
 
 .card-title a{
