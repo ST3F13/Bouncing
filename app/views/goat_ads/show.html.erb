@@ -1,18 +1,45 @@
-<h1>show</h1>
-
-
-    <h2> <%= @goat_ad.name %> </h2>
-    <p> <%= @goat_ad.age %> </p>
-    <p> <%= @goat_ad.address %> </p>
-    <p> <%= @goat_ad.longitude %> </p>
-    <p> <%= @goat_ad.latitude %> </p>
-    <p> <%= @goat_ad.description %> </p>
-    <p> <%= @goat_ad.price_per_day %> </p>
-    <p> <%= @goat_ad.features %> </p>
-    <p> <%= cl_image_tag(@goat_ad.media.key, height: 300, width: 400, crop: :fill) %> </p>
-    <p> <%= @goat_ad.start_available %> </p>
-    <p> <%= @goat_ad.end_available %> </p>
-
+<div class="goat-header">
+<br/>
+<h2><%= @goat_ad.name %></h2>
+<p>5,0 (25 reviews) ⠂SuperGoat ⠂<%= @goat_ad.address %></p><br/>
+</div>
+<div class="gallery">
+  <figure class="gallery__item gallery__item--1">
+    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
+  </figure>
+  <figure class="gallery__item gallery__item--2" >
+    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
+  </figure>
+  <figure class="gallery__item gallery__item--3">
+    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
+  </figure>
+  <figure class="gallery__item gallery__item--4">
+    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
+  </figure>
+  <figure class="gallery__item gallery__item--5">
+    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
+  </figure>
+</div>
+</div>
+<div class="goat-board">
+<h3>Single goat. Owner:</h3>
+<p><%= @goat_ad.age %> years old - <%= @goat_ad.features %></p>
+<hr class="solid">
+<div class="goat-description">
+<h3>Description</h3><%= @goat_ad.description %>
+<br/>
+<h3>Price</h3><%= @goat_ad.price_per_day %><br/>
+</div>
+<%#=    <h2> <%= @goat_ad.name %> </h2>
+<%#=     <p> <%= @goat_ad.age %> </p>
+<%#=     <p> <%= @goat_ad.address %> </p>
+<%#=     <p> <%= @goat_ad.longitude %> </p>
+<%#=    <p> <%= @goat_ad.latitude %> </p>
+<%#=     <p> <%= @goat_ad.description %> </p>
+<%#=     <p> <%= @goat_ad.price_per_day %> </p>
+<%#=     <p> <%= @goat_ad.features %> </p>
+<%#=     <p> <%= @goat_ad.medias %> </p>
+<%#=     <p> <%= @goat_ad.start_available %> </p>
+<%#=     <p> <%= @goat_ad.end_available %> </p>
     <%=link_to"index", goat_ads_path %>
-
-
+</div>
