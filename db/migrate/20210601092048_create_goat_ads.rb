@@ -4,8 +4,8 @@ class CreateGoatAds < ActiveRecord::Migration[6.0]
       t.string :name
       t.integer :age
       t.string :address
-      t.string :longitude
       t.string :latitude
+      t.string :longitude
       t.text :description
       t.integer :price_per_day
       t.string :features
