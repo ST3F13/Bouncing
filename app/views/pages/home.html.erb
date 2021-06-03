@@ -4,7 +4,11 @@
   <div class="container-box1">
   <h1>Get your goat </h1>
   <h2>      & got your guest</h2>
+
     <div class="form">
+
+             </div>
+
       <input type="text" class="searchgoat" placeholder="Where..">|
       <input type="date" class="searchgoat" placeholder="When..">|
       <input type="date" class="searchgoat" placeholder="When..">|
@@ -21,7 +25,8 @@
 <h3>Top category</h3>
 <div class="cards1">
  <% features_collection.each do |feature| %>
-     <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= link_to feature, goat_ads_path(feature: feature) %> </div>
+     <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= link_to feature, goat_ads_path(feature: feature), class: "text-decoration-none" %>
+    </div>
   <% end %>
 
 
@@ -44,7 +49,29 @@
  </div>
 </div>
 
+<% @goat_ads.each do |goat_ad| %>
+
+ <div class="card" style="width: 22rem;">
 
 
+    <div class="card-img-top">
+      <%= link_to goat_ad do %>
+      <% goat_ad.medias.first(1).each do |media| %>
+      <%= cl_image_tag media.key, height: 200, width: 200, crop: :fill%>
+      <% end %>
+
+      <% end %>
+    </div>
+
+    <div class="card-body">
+        <h5 class="card-title"><%= goat_ad.name %></h5>
+        <p class="card-text"><%=goat_ad.features%></p>
+        <p class="card-text"><%=goat_ad.price_per_day%></p>
+        <%= link_to "Rent now", goat_ad , class: "btn btn-dark" %>
+    </div>
 
 
+  </div>
+    <% end %>
+ </div>
+</div>

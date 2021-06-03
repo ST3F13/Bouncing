@@ -30,3 +30,5 @@ const initMapbox = () => {
 };
 
 export { initMapbox };
+
+//if >1 foreach else 

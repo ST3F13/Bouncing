@@ -8,10 +8,24 @@ class GoatAdsController < ApplicationController
         lng: goat_ad.longitude
       }
     end
-  end
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR features ILIKE :query OR address ILIKE :query"
+      @goat_ads = GoatAd.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @goat_ads = GoatAd.all
+    end
+      
+    end
 
   def show
     @goat_ad = GoatAd.find(params[:id])
+
+    #@marker = [{
+        #lat: @goat_ad.latitude,
+        #lng: @goat_ad.longitude
+        #}]
+    #end
   end
 
   def new
@@ -46,6 +60,6 @@ class GoatAdsController < ApplicationController
   private
 
   def goat_ad_params
-    params.require(:goat_ad).permit(:id, :name, :age, :latitude, :longitude, :description, :price_per_day, :features)
+    params.require(:goat_ad).permit(:id, :name, :age, :latitude, :longitude, :description, :price_per_day, :features, medias: [])
   end
 end

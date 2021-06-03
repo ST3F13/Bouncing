@@ -7,13 +7,15 @@
   <%= f.input :description %>
   <%= f.input :price_per_day %>
   <%= f.input :features, :collection => %w[fighter milker mower sociable space-traveller] %>
-  <%= f.input :medias, as: :file, label: "Add a media of your goat" %>
+  <%= f.input :medias, as: :file, input_html: { multiple: true }, label: "Add a media of your goat" %>
   <%= f.input :start_available %>
   <%= f.input :end_available %>
 
  <div class="btn"> <%= f.submit "Submit creation", class: "btn btn-primary" %> </div>
 
 <% end %>
+
+<div class="btn"> <%= link_to "Back", root_path, class: "btn" %> </div>
 
 </div>
 
