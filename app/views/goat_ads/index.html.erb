@@ -1,14 +1,17 @@
 
 <h1>Categories</h1>
+
     <div class="container_card">
-        <div class="content">
+          <div class="content">
               <div class="cards">
                 <% @goat_ads.each do |goat_ad| %>
                 <div class="card">
                 
 
                   <div class="card-image">
-                    <%= image_tag "https://i.ytimg.com/vi/3wvatkyji1w/maxresdefault.jpg" %>
+                    <% goat_ad.medias.first(1).each do |media| %>
+                    <%= cl_image_tag media.key, height: 200, width: 200, crop: :fill%>
+                    <% end %>
                   </div>
                   <div class="card-info">
                   
@@ -28,3 +31,4 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
   </div>
+

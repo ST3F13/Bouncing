@@ -9,7 +9,7 @@ class GoatAdsController < ApplicationController
     end
 
     if params[:query].present?
-      sql_query = "name ILIKE :query OR features ILIKE :query"
+      sql_query = "name ILIKE :query OR features ILIKE :query OR address ILIKE :query"
       @goat_ads = GoatAd.where(sql_query, query: "%#{params[:query]}%")
     else
       @goat_ads = GoatAd.all

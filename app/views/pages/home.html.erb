@@ -6,6 +6,32 @@
   <h2>      & got your guest</h2>
   
     <div class="form">
+      <%= form_tag goat_ads_path, method: :get,
+        class: "formsearch" do %>
+        <%= text_field_tag :query,
+                params[:query],
+                class: "search_bar",
+                placeholder: "Where"
+        %>
+        <%= text_field_tag :query,
+                params[:query],
+                class: "search_bar",
+                placeholder: "Who"
+        %>
+        <%= text_field_tag :query,
+                params[:query],
+                class: "search_bar",
+                placeholder: "When"
+        %>
+        <%= text_field_tag :query,
+                params[:query],
+                class: "search_bar",
+                placeholder: "When"
+        %>
+          
+        <%= submit_tag "Search", class: "btn btn-dark" %>
+             </div>
+            <% end %>
       <input type="text" class="searchgoat" placeholder="Where..">|
       <input type="date" class="searchgoat" placeholder="When..">|
       <input type="date" class="searchgoat" placeholder="When..">|
@@ -40,7 +66,10 @@
 
     <div class="card-img-top"> 
       <%= link_to goat_ad do %>
-      <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", style: 'width:60%'%>
+      <% goat_ad.medias.first(1).each do |media| %>
+      <%= cl_image_tag media.key, height: 200, width: 200, crop: :fill%>
+      <% end %>
+      
       <% end %> 
     </div>
 
@@ -48,7 +77,7 @@
         <h5 class="card-title"><%= goat_ad.name %></h5>
         <p class="card-text"><%=goat_ad.features%></p>
         <p class="card-text"><%=goat_ad.price_per_day%></p>
-        <%= link_to "Rent now", goat_ad , class: "btn" %>
+        <%= link_to "Rent now", goat_ad , class: "btn btn-dark" %>
     </div>
             
   </div>
