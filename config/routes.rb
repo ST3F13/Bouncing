@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  resources :bookings
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :goat_ads 
+  resources :goat_ads do
+    resources :bookings, only: :create
+  end
 end

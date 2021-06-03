@@ -4,8 +4,9 @@
   <div class="container-box1">
   <h1>Get your goat </h1>
   <h2>      & got your guest</h2>
-  
+
     <div class="form">
+<<<<<<< HEAD
             <%= form_tag goat_ads_path, method: :get,
                 class: "formsearch" do %>
               <%= text_field_tag :query,
@@ -15,6 +16,15 @@
               %>
              <%= submit_tag "Search", class: "btn btn-dark" %>
  <% end %>
+=======
+
+             </div>
+
+      <input type="text" class="searchgoat" placeholder="Where..">|
+      <input type="date" class="searchgoat" placeholder="When..">|
+      <input type="date" class="searchgoat" placeholder="When..">|
+      <input type="submit" id="submit">
+>>>>>>> fd8b053a06e1fb0681f290043908c890a8ba9433
     </div>
   </div>
   <div class="container-box2">
@@ -26,30 +36,51 @@
 <div class="container-box">
 <h3>Top category</h3>
 <div class="cards1">
+<<<<<<< HEAD
   <div class="card-category" style="background-image: url(https://www.globaltimes.cn/Portals/0//attachment/2017/2017-09-13/19462967-4a51-4f31-8b04-601ea9c6fd14.jpeg)">  <%= link_to "fighter", goat_ads_path(feature: fighter), class: "text-decoration-none" %> </div>
   <div class="card-category" style="background-image: url(app/assets/images/fight30.jpeg)"> <%= link_to "milker", goat_ads_path(feature: milker), class: "text-decoration-none" %> </div>
   <div class="card-category" style="background-image: url(app/assets/images/fight30.jpeg)"> <%= link_to "mower", goat_ads_path(feature: mower), class: "text-decoration-none" %> </div>
   <div class="card-category" style="background-image: url(app/assets/images/fight30.jpeg)"> <%= link_to "sociable", goat_ads_path(feature: sociable), class: "text-decoration-none" %> </div>
   <div class="card-category" style="background-image: url(app/assets/images/fight30.jpeg)"> <%= link_to "space-traveller", goat_ads_path(feature: space_traveller), class: "text-decoration-none" %> </div>
+=======
+ <% features_collection.each do |feature| %>
+     <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= link_to feature, goat_ads_path(feature: feature), class: "text-decoration-none" %>
+    </div>
+  <% end %>
+
+
+>>>>>>> fd8b053a06e1fb0681f290043908c890a8ba9433
  </div>
 </div>
 
 <div class="container-box">
 <h3>Most popular</h3>
 <div class="cards">
+ <% @goat_ads.each do |goat_ad| %>
+ <div class="card" style="width: 22rem;"><%= image_tag "https://source.unsplash.com/featured/?goat", style: 'width:60%'%>
+  <div class="card-img-top"> </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to goat_ad.name, goat_ad %></h5>
+    <p class="card-text"><%=goat_ad.features%></p>
+    <a href="#" class="btn btn-dark btn-block"><%= goat_ad.price_per_day%>€ </a>
+  </div>
+</div>
+  <% end %>
+ </div>
+</div>
 
 <% @goat_ads.each do |goat_ad| %>
-    
+
  <div class="card" style="width: 22rem;">
 
 
-    <div class="card-img-top"> 
+    <div class="card-img-top">
       <%= link_to goat_ad do %>
       <% goat_ad.medias.first(1).each do |media| %>
       <%= cl_image_tag media.key, height: 200, width: 200, crop: :fill%>
       <% end %>
-      
-      <% end %> 
+
+      <% end %>
     </div>
 
     <div class="card-body">
@@ -58,7 +89,7 @@
         <p class="card-text"><%=goat_ad.price_per_day%></p>
         <%= link_to "Rent now", goat_ad , class: "btn btn-dark" %>
     </div>
-            
+
 
   </div>
     <% end %>
