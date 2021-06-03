@@ -46,6 +46,6 @@ class GoatAdsController < ApplicationController
   private
 
   def goat_ad_params
-    params.require(:goat_ad).permit(:id, :name, :age, :latitude, :longitude, :description, :price_per_day, :features)
+    params.require(:goat_ad).permit(:id, :name, :age, :latitude, :longitude, :description, :price_per_day, :features, medias: [])
   end
 end
