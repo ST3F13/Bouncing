@@ -1,13 +1,24 @@
 
+
+<h1>Categories</h1>
+
+    <div class="container_card">
+          <div class="content">
+              <div class="cards">
+                <% @goat_ads.each do |goat_ad| %>
+
 <h1><%= @feature %></h1>
     <div class="container_card">
         <div class="content">
           <div class="cards">
               <% @goat_ads.each do |goat_ad| %>
               <%= link_to goat_ad_path(goat_ad), class: "text-decoration-none" do %>
+
                 <div class="card">
                   <div class="card-image">
-                    <%= image_tag "https://i.ytimg.com/vi/3wvatkyji1w/maxresdefault.jpg" %>
+                    <% goat_ad.medias.first(1).each do |media| %>
+                    <%= cl_image_tag media.key, height: 200, width: 200, crop: :fill%>
+                    <% end %>
                   </div>
                   <div class="card-info">
                     <h3><%= goat_ad.name %></h3>
