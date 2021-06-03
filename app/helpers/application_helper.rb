@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def features_collection
     %w[fighter milker mower sociable space-traveller]
   end

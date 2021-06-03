@@ -10,8 +10,8 @@ class GoatAd < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_features,
-    against: [ :name, :features, :address ],
-    using: {
-      tsearch: { prefix: true } 
-    }
+                  against: %i[name features address],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
