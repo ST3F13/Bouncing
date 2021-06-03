@@ -4,22 +4,13 @@
 </div>
 
 <div class="gallery">
+
   <figure class="gallery__item gallery__item--1">
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
+    <% @goat_ad.medias.each do |media| %>
+    <%= cl_image_tag media.key, height: 490, width: 400, crop: :fill%>
+    <% end %>
   </figure>
-  <figure class="gallery__item gallery__item--2" >
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-  <figure class="gallery__item gallery__item--3">
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-  <figure class="gallery__item gallery__item--4">
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-  <figure class="gallery__item gallery__item--5">
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-</div>
+
 </div>
 
 <div class="goat-board">

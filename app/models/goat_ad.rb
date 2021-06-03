@@ -1,5 +1,5 @@
 class GoatAd < ApplicationRecord
-  has_one_attached :media
+  has_many_attached :medias
   validates :name, :age, :description,
             :price_per_day, :features, presence: true
   validates :name, length: { minimum: 2 }
