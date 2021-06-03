@@ -79,3 +79,4 @@ goat_ad5.medias.attach(io: file_53, filename: 'mow53.jpeg', content_type: 'image
 goat_ad5.medias.attach(io: file_54, filename: 'mow54.jpeg', content_type: 'image/jpeg')
 goat_ad5.save
 
+

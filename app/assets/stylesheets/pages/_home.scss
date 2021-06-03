@@ -13,11 +13,10 @@ h1,h3{
   font-weight: bold;
 }
 
-h1 {
+h1{
   font-size: 46px;
 }
-
-h2 {
+h2{
   font-weight: 400;
   font-size: 20px;
   padding-left: 150px;
@@ -45,7 +44,6 @@ h3{
 }
 .navigation  li .search_bar{
   padding: 5px 30px;
-  border: 0px;
   border-radius: 5px;
 }
 
@@ -193,24 +191,21 @@ h3{
   border-radius: 5px;
 }
 
-.goat-header h2{
-  font-weight: bold;
-  width: 80%;
+.goat-header h2 {
+    font-weight: bold;
+    width: 80%;
 }
 .goat-header p {
-  font-weight: lighter;
-  width: 80%;
+    font-weight: lighter;
+    width: 80%;
 }
-
 .goat-board h3 {
-  font-weight: bold;
+    font-weight: bold;
 }
-
 .goat-board p {
-  font-weight: normal;
-  width: auto;
+    font-weight: normal;
+    width: auto;
 }
-
 .gallery {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -228,24 +223,12 @@ h3{
     object-fit: cover;
     border-radius: 10px;
 }
-
-.gallery__img:hover {
-  position:relative;
-  top:-25px;
-  left:-35px;
-  width:580px;
-  height:auto;
-  display:block;
-  z-index:999;
-}
-
 .gallery__item--1 {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row-start: 1;
     grid-row-end: 7;
 }
-
 .gallery__item--2 {
     grid-column-start: 5;
     grid-column-end: 7;
@@ -273,32 +256,11 @@ h3{
 .goat-board {
     width: 80%;
 }
-
-.booking-card{
-  border-radius: 20px;
-  border:0px solid;
-  margin: 10px;
-  height: 400px;
-  box-shadow:
-  0 12.5px 10px rgba(0, 0, 0, 0.035),
-  0 100px 80px rgba(0, 0, 0, 0.07);
-}
-
-.booking-card-price h5{
-  width: 80%;
-  color:black;
-}
-
 hr.solid {
     border-top: 3px solid #bbb;
   }
 
-
-.container_card{
+.formsearch{
   display: flex;
 }
 
-
-.card-category a{
-  color: white;
-}
