@@ -1,8 +1,8 @@
 <div class="goat-header">
-<br/>
-<h2><%= @goat_ad.name %></h2>
-<p>5,0 (25 reviews) ⠂SuperGoat ⠂<%= @goat_ad.address %></p><br/>
+  <h2><%= @goat_ad.name %></h2>
+  <p>5,0 (25 reviews) ⠂ SuperGoat ⠂ <%= @goat_ad.address %></p><br/>
 </div>
+
 <div class="gallery">
   <figure class="gallery__item gallery__item--1">
     <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
@@ -21,15 +21,33 @@
   </figure>
 </div>
 </div>
+
 <div class="goat-board">
-<h3>Single goat. Owner:</h3>
-<p><%= @goat_ad.age %> years old - <%= @goat_ad.features %></p>
-<hr class="solid">
-<div class="goat-description">
-<h3>Description</h3><%= @goat_ad.description %>
-<br/>
-<h3>Price</h3><%= @goat_ad.price_per_day %><br/>
-</div>
+  <div style="width: 70%; float:left">
+    <h3>Single goat. Owner:</h3>
+    <p><%= @goat_ad.age %> years old - <%= @goat_ad.features %></p>
+    <hr class="solid">
+
+    <div class="goat-description">
+      <h3>Description</h3><%= @goat_ad.description %>
+
+      <br/>
+
+        <%=link_to"index", goat_ads_path %>
+    </div>
+  </div>
+
+  <div style="width: 30%; float:right">
+    <div class="booking-card" style="width: 22rem;">
+      <div class="card-img-top"> </div>
+        <div class="card-body">
+          <h5 class="booking-card-price"><%= @goat_ad.price_per_day %>€ /day</h5>
+          <a href="#" class="btn btn-dark btn-block">Book now </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <%#=    <h2> <%= @goat_ad.name %> </h2>
 <%#=     <p> <%= @goat_ad.age %> </p>
 <%#=     <p> <%= @goat_ad.address %> </p>
@@ -41,5 +59,4 @@
 <%#=     <p> <%= @goat_ad.medias %> </p>
 <%#=     <p> <%= @goat_ad.start_available %> </p>
 <%#=     <p> <%= @goat_ad.end_available %> </p>
-    <%=link_to"index", goat_ads_path %>
 </div>
