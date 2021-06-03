@@ -1,4 +1,4 @@
-.card{
+.card {
   background-size: cover;
   background-position: center;
   height: 300px;
@@ -12,17 +12,17 @@
 
 .content {
   min-height: 100vh;
+  h1 {
+    margin-left: 40px;
+  }
 }
 
-.card-image {
-  height: 200px;
-  // background-image: url(asset-path("fight.jpeg"));
-  // background-size: cover;
-}
+
 .card-image img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: 15px 15px 0px 0;
  }
 
 .card-info {
@@ -48,3 +48,4 @@
 .card-category a{
   color: white;
 }
+
