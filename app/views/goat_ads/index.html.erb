@@ -1,24 +1,29 @@
 
-<h1>Categories</h1>
+  <h1><%= @feature %></h1>
+
     <div class="container_card">
         <div class="content">
               <div class="cards">
                 <% @goat_ads.each do |goat_ad| %>
+
+                <%= link_to goat_ad_path(goat_ad), class: "text-decoration-none" do  %>
+
                 <div class="card">
-                
+
 
                   <div class="card-image">
-                    <%= image_tag "https://i.ytimg.com/vi/3wvatkyji1w/maxresdefault.jpg" %>
+                    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png" %>
                   </div>
                   <div class="card-info">
-                  
-                      <h3><%= link_to goat_ad.name, goat_ad %></h3>
+
+                      <h3><%= goat_ad.name %></h3>
                       <p><%= goat_ad.description %></p>
                       <p><%= goat_ad.price_per_day %>€/day</p>
-                  
+
                   </div>
-                
+
                 </div>
+                <% end %>
                 <% end %>
             </div>
       </div>
