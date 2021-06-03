@@ -31,3 +31,4 @@ goat_ad5 = GoatAd.create({ name:'Gardenoo', age: 4, address: "La chèvrerie du b
 #goat_ad5.media.attach(io: file_5, filename: 'mow.jpeg', content_type: 'image/jpeg')
 #goat_ad5.save
 
+

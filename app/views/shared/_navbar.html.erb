@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://theme.zdassets.com/theme_assets/1318471/b1cf7965b65dbf1abc4e18e553f7f943c50fea5c.png" %>
     <% end %>
 
@@ -11,8 +11,18 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-            <li class="nav-item">
-          <input type="text" class="search_bar" placeholder="Search..">
+            <li class="nav-item search">
+            <%= form_tag goat_ads_path, method: :get,
+                class: "formsearch" do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "search_bar",
+                placeholder: "Find a goat"
+              %>
+              <div>
+             <%= submit_tag "Search", class: "btn btn-dark" %>
+             </div>
+            <% end %>
       </li>
       <li class="nav-item">
           <li class="current"><%= link_to "Rent your goat", new_goat_ad_path %></li>
