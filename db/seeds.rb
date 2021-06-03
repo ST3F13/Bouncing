@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 GoatAd.destroy_all
 
 file_10 = Rails.root.join("app/assets/images/sociable10.jpeg").open
@@ -43,13 +35,6 @@ goat_ad2 = GoatAd.create({ name:'Elianemeusk', age: 8, address: "la ferme d'Agni
 goat_ad3 = GoatAd.create({ name:'John Seguin', age: 11, address: "Ferme les Seguins, 04210 Valensole", latitude:"43.863771" , longitude: "5.953728",description: "genuine fighter since 5 generations, golden Medal in Olympics Games in Bejin", price_per_day: 400, features: "fighter", start_available:"07/03/2021", end_available:"12/24/2021"})
 goat_ad4 = GoatAd.create({ name:'Candia', age: 4, address: "Ferme Canteperdrix, 263 chemin de, 83390 Puget-ville", latitude: "43.268315",longitude: "6.098027", description: "Candia can deliver you 235 liters of milk every morning except sunday day off for her, can be useful for large families", price_per_day: 120, features: "milker", start_available:"07/03/2021", end_available:"12/24/2021"})
 goat_ad5 = GoatAd.create({ name:'Gardenoo', age: 4, address: "La chèvrerie du bois d'Amon, 1307 Chemin Départemental 13 Route de Grasse, 06530 Saint-Cézaire-sur-Siagne", latitude: "43.653732" , longitude: "6.818203", description: "operationnal for mowing 200 a/day, she can refresh all gardens. She doesn't eat flowers, only weeds ! Then your grass will be great !", price_per_day: 130, features: "mower", start_available:"07/03/2021", end_available:"12/24/2021"})
-# goat_ad6 = GoatAd.create({ name:'John Seguin', age: 11, address: "Ferme les Seguins, 04210 Valensole", latitude:"43.863771" , longitude: "5.953728",description: "genuine fighter since 5 generations, golden Medal in Olympics Games in Bejin", price_per_day: 400, features: "fighter", start_available:"07/03/2021", end_available:"12/24/2021"})
-# goat_ad7 = GoatAd.create({ name:'John Seguin', age: 11, address: "Ferme les Seguins, 04210 Valensole", latitude:"43.863771" , longitude: "5.953728",description: "genuine fighter since 5 generations, golden Medal in Olympics Games in Bejin", price_per_day: 400, features: "fighter", start_available:"07/03/2021", end_available:"12/24/2021"})
-# goat_ad8 = GoatAd.create({ name:'John Seguin', age: 11, address: "Ferme les Seguins, 04210 Valensole", latitude:"43.863771" , longitude: "5.953728",description: "genuine fighter since 5 generations, golden Medal in Olympics Games in Bejin", price_per_day: 400, features: "fighter", start_available:"07/03/2021", end_available:"12/24/2021"})
-# goat_ad9 = GoatAd.create({ name:'John Seguin', age: 11, address: "Ferme les Seguins, 04210 Valensole", latitude:"43.863771" , longitude: "5.953728",description: "genuine fighter since 5 generations, golden Medal in Olympics Games in Bejin", price_per_day: 400, features: "fighter", start_available:"07/03/2021", end_available:"12/24/2021"})
-# goat_ad10 = GoatAd.create({ name:'John Seguin', age: 11, address: "Ferme les Seguins, 04210 Valensole", latitude:"43.863771" , longitude: "5.953728",description: "genuine fighter since 5 generations, golden Medal in Olympics Games in Bejin", price_per_day: 400, features: "fighter", start_available:"07/03/2021", end_available:"12/24/2021"})
-# goat_ad11 = GoatAd.create({ name:'John Seguin', age: 11, address: "Ferme les Seguins, 04210 Valensole", latitude:"43.863771" , longitude: "5.953728",description: "genuine fighter since 5 generations, golden Medal in Olympics Games in Bejin", price_per_day: 400, features: "fighter", start_available:"07/03/2021", end_available:"12/24/2021"})
-# goat_ad12 = GoatAd.create({ name:'John Seguin', age: 11, address: "Ferme les Seguins, 04210 Valensole", latitude:"43.863771" , longitude: "5.953728",description: "genuine fighter since 5 generations, golden Medal in Olympics Games in Bejin", price_per_day: 400, features: "fighter", start_available:"07/03/2021", end_available:"12/24/2021"})
 
 goat_ad1.medias.attach(io: file_10, filename: 'sociable10.jpeg', content_type: 'image/jpeg')
 goat_ad1.medias.attach(io: file_11, filename: 'sociable11.jpeg', content_type: 'image/jpeg')
