@@ -1,34 +1,39 @@
 
+
 <h1>Categories</h1>
 
     <div class="container_card">
           <div class="content">
               <div class="cards">
                 <% @goat_ads.each do |goat_ad| %>
-                <div class="card">
-                
 
+<h1><%= @feature %></h1>
+    <div class="container_card">
+        <div class="content">
+          <div class="cards">
+              <% @goat_ads.each do |goat_ad| %>
+              <%= link_to goat_ad_path(goat_ad), class: "text-decoration-none" do %>
+
+                <div class="card">
                   <div class="card-image">
                     <% goat_ad.medias.first(1).each do |media| %>
                     <%= cl_image_tag media.key, height: 200, width: 200, crop: :fill%>
                     <% end %>
                   </div>
                   <div class="card-info">
-                  
-                      <h3><%= link_to goat_ad.name, goat_ad %></h3>
-                      <p><%= goat_ad.description %></p>
-                      <p><%= goat_ad.price_per_day %>€/day</p>
-                  
+                    <h3><%= goat_ad.name %></h3>
+                    <p><%= goat_ad.description %></p>
+                    <p><%= goat_ad.price_per_day %>€/day</p>
                   </div>
-                
                 </div>
-                <% end %>
-            </div>
+            <% end %>
+            <% end %>
+        </div>
       </div>
     <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  </div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 
