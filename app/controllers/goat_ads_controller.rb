@@ -1,7 +1,8 @@
 class GoatAdsController < ApplicationController
   def index
-    @goat_ads = GoatAd.all
-         @markers = @goat_ads.geocoded.map do |goat_ad|
+    @feature = params[:feature]
+    @goat_ads = GoatAd.where(features: @feature)
+    @markers = @goat_ads.geocoded.map do |goat_ad|
       {
         lat: goat_ad.latitude,
         lng: goat_ad.longitude
@@ -29,7 +30,6 @@ class GoatAdsController < ApplicationController
 
   def new
     @goat_ad = GoatAd.new
-    
   end
 
   def create

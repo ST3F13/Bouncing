@@ -21,8 +21,8 @@
 <div class="container-box">
 <h3>Top category</h3>
 <div class="cards1">
- <% @goat_ads.first(5).each do |goat_ad| %>
-     <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= link_to goat_ad.features, goat_ads_path %> </div>
+ <% features_collection.each do |feature| %>
+     <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= link_to feature, goat_ads_path(feature: feature), class: "text-decoration-none" %> </div>
   <% end %>
 
 
@@ -32,6 +32,15 @@
 <div class="container-box">
 <h3>Most popular</h3>
 <div class="cards">
+
+ <% @goat_ads.each do |goat_ad| %>
+ <div class="card" style="width: 22rem;"><%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", style: 'width:60%'%>
+  <div class="card-img-top"> </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= link_to goat_ad.name, goat_ad, class: "text-decoration-none" %></h5>
+    <p class="card-text"><%=goat_ad.features%></p>
+    <a href="#" class="btn btn-dark btn-block"><%= goat_ad.price_per_day%>€ </a>
+
 
 <% @goat_ads.each do |goat_ad| %>
     
@@ -51,6 +60,7 @@
         <%= link_to "Rent now", goat_ad , class: "btn" %>
     </div>
             
+
   </div>
     <% end %>
  </div>
