@@ -66,4 +66,7 @@ gem 'cloudinary', '~> 1.16.0'
 
 gem 'geocoder'
 
+gem "simple_calendar", "~> 2.4"
+
 gem 'pg_search', '~> 2.3.0'
+

@@ -1,5 +1,9 @@
 class GoatAd < ApplicationRecord
+
+  has_many :bookings
+  belongs_to :user
   has_many_attached :medias
+
   validates :name, :age, :description,
             :price_per_day, :features, presence: true
   validates :name, length: { minimum: 2 }
