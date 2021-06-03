@@ -11,12 +11,12 @@ module ApplicationHelper
     "milker"
   end
 
-  def mower
-    "mower"
-  end
-
   def sociable
     "sociable"
+  end
+
+  def mower
+    "mower"
   end
 
   def space_traveller
