@@ -20,7 +20,6 @@ class GoatAdsController < ApplicationController
   def show
     @goat_ad = GoatAd.find(params[:id])
     @booking = Booking.new
-
   end
 
   def new
@@ -56,7 +55,7 @@ class GoatAdsController < ApplicationController
   private
 
   def goat_ad_params
-
-    params.require(:goat_ad).permit(:id, :name, :age, :address, :latitude, :longitude, :description, :price_per_day, :features, :start_available, :end_available, medias: [])
+    params.require(:goat_ad).permit(:id, :name, :age, :address, :latitude, :longitude, :description, :price_per_day,
+                                    :features, :start_available, :end_available, medias: [])
   end
 end
