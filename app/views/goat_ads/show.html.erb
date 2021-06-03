@@ -1,31 +1,24 @@
 <div class="goat-header">
-  <h2><%= @goat_ad.name %></h2>
-  <p>5,0 (25 reviews) ⠂ SuperGoat ⠂ <%= @goat_ad.address %></p><br/>
+  <h1><%= @goat_ad.name %></h1>
+  <p>5,0 (25 reviews)</p>
+  <p>Address : <%= @goat_ad.address %></p><br/>
 </div>
 
-<div class="gallery">
-  <figure class="gallery__item gallery__item--1">
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-  <figure class="gallery__item gallery__item--2" >
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-  <figure class="gallery__item gallery__item--3">
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-  <figure class="gallery__item gallery__item--4">
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-  <figure class="gallery__item gallery__item--5">
-    <%= image_tag "https://www.pngarts.com/files/4/Goat-PNG-High-Quality-Image.png", class:"gallery__img" %>
-  </figure>
-</div>
+<div class="galleryflex">
+
+    <% @goat_ad.medias.each do |media| %>
+    <div class="gallery_show">
+    <%= cl_image_tag media.key, height: 150, width: 220, crop: :fill%>
+    </div>
+    <% end %>
+
 </div>
 
 <div class="goat-board">
   <div style="width: 70%; float:left">
     <h3>Single goat. Owner:</h3>
-    <p><%= @goat_ad.age %> years old - <%= @goat_ad.features %></p>
+    <p><%= @goat_ad.age %> years old</p>
+    <p><%= @goat_ad.features %></p>
     <hr class="solid">
 
     <div class="goat-description">
@@ -37,7 +30,7 @@
     </div>
   </div>
 
-  <div style="width: 30%; float:right">
+  <div style="width: 30%">
     <div class="booking-card" style="width: 22rem;">
       <div class="card-img-top"> </div>
         <div class="card-body">

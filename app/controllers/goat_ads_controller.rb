@@ -1,7 +1,15 @@
 class GoatAdsController < ApplicationController
   def index
-    @goat_ads = GoatAd.all
-         @markers = @goat_ads.geocoded.map do |goat_ad|
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR features ILIKE :query OR address ILIKE :query"
+      @goat_ads = GoatAd.where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:feature].present?
+      @feature = params[:feature]
+      @goat_ads = GoatAd.where(features: @feature)
+    else
+      @goat_ads = GoatAd.all
+    end
+    @markers = @goat_ads.geocoded.map do |goat_ad|
       {
         lat: goat_ad.latitude,
         lng: goat_ad.longitude
@@ -12,11 +20,11 @@ class GoatAdsController < ApplicationController
   def show
     @goat_ad = GoatAd.find(params[:id])
     @booking = Booking.new
+
   end
 
   def new
     @goat_ad = GoatAd.new
-    
   end
 
   def create
@@ -48,6 +56,7 @@ class GoatAdsController < ApplicationController
   private
 
   def goat_ad_params
-    params.require(:goat_ad).permit(:id, :name, :age, :address, :latitude, :longitude, :description, :price_per_day, :features, :start_available, :end_available)
+
+    params.require(:goat_ad).permit(:id, :name, :age, :address, :latitude, :longitude, :description, :price_per_day, :features, :start_available, :end_available, medias: [])
   end
 end
