@@ -1,6 +1,7 @@
 module ApplicationHelper
-  def space_traveller
-    "space-traveller"
+
+  def features_collection
+    %w[fighter milker mower sociable space-traveller]
   end
 
   def fighter
@@ -19,7 +20,7 @@ module ApplicationHelper
     "mower"
   end
 
-  def features_collection
-    %w[fighter milker mower sociable space-traveller]
+  def space_traveller
+    "space-traveller"
   end
 end
