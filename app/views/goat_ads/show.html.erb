@@ -14,12 +14,12 @@
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= cl_image_tag @goat_ad.medias[0].key, :width=>250, :height=>350, crop: :crop, class: "d-block w-100" %>
+        <%= cl_image_tag @goat_ad.medias[0].key, :width=>250, :height=>350, crop: :fit class: "d-block w-100" %>
       </div>
       <% @goat_ad.medias.each_with_index do |media, index| %>
       <% if index > 0 %>
       <div class="carousel-item">
-        <%= cl_image_tag media.key, :width=>250, :height=>350,crop: :crop, class: "d-block w-100" %>
+        <%= cl_image_tag media.key, :width=>250, :height=>350,crop: :fit, class: "d-block w-100" %>
       </div>
       <% end %>
     <% end %>
