@@ -1,62 +1,86 @@
 <div class="goat-header">
-  <h1><%= @goat_ad.name %></h1>
-  <p>5,0 (25 reviews)</p>
-  <p>Address : <%= @goat_ad.address %></p><br/>
+  <div class="container-box">
+    <%= link_to "Home", root_path, class: "text-decoration-none"%> > <%=link_to @goat_ad.features, goat_ads_path , class: "text-decoration-none" %> > <%= @goat_ad.name %>
+    <h1><%= @goat_ad.name %></h1>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i> <p> (25 reviews)</p>
+    </div>
 </div>
 
-<div class="galleryflex">
+<div class="container-box">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= cl_image_tag @goat_ad.medias[0].key, :width=>250, :height=>350, crop: :crop, class: "d-block w-100" %>
+      </div>
+      <% @goat_ad.medias.each_with_index do |media, index| %>
+      <% if index > 0 %>
+      <div class="carousel-item">
+        <%= cl_image_tag media.key, :width=>250, :height=>350,crop: :crop, class: "d-block w-100" %>
+      </div>
+      <% end %>
+    <% end %>
+    </div>
 
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  </br>
+
+  <div class="galleryflex">
     <% @goat_ad.medias.each do |media| %>
     <div class="gallery_show">
-    <%= cl_image_tag media.key, height: 150, width: 220, crop: :fill%>
+      <%= cl_image_tag media.key, height: 110, width: 195, crop: :fill %>
     </div>
     <% end %>
 
-</div>
-
-<div class="goat-board">
-  <div style="width: 70%; float:left">
-    <h3>Single goat. Owner:</h3>
-    <p><%= @goat_ad.age %> years old</p>
-    <p><%= @goat_ad.features %></p>
-    <hr class="solid">
-
-    <div class="goat-description">
-      <h3>Description</h3><%= @goat_ad.description %>
-
-      <br/>
-
-        <%=link_to"index", goat_ads_path %>
-    </div>
-  </div>
-
-  <div style="width: 30%">
-    <div class="booking-card" style="width: 22rem;">
-      <div class="card-img-top"> </div>
-        <div class="card-body">
-          <h5 class="booking-card-price"><%= @goat_ad.price_per_day %>€ /day</h5>
-            <%= simple_form_for [ @goat_ad, @booking ] do |f| %>
-      <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Book now", class: "btn btn-dark btn-block" %>
-    <% end %>
   </div>
 </div>
-          <a href="#" class="btn btn-dark btn-block">Book now </a>
-        </div>
+
+<div class="container-box-flex">
+  <div class="goat-board">
+      <h4>Single goat. Owner: <%= @goat_ad.user.first_name %></h4>
+        <p><i class="fas fa-birthday-cake" width="20px"></i> <%= @goat_ad.age %> years old</p>
+        <p><i class="far fa-dot-circle"></i> <%= @goat_ad.features %></p>
+      <hr class="solid">
+      <div class="goat-description">
+        <h4>Description</h4>
+        <p><%= @goat_ad.description %></p>
       </div>
-    </div>
   </div>
 
-<%#=    <h2> <%= @goat_ad.name %> </h2>
-<%#=     <p> <%= @goat_ad.age %> </p>
-<%#=     <p> <%= @goat_ad.address %> </p>
-<%#=     <p> <%= @goat_ad.longitude %> </p>
-<%#=    <p> <%= @goat_ad.latitude %> </p>
-<%#=     <p> <%= @goat_ad.description %> </p>
-<%#=     <p> <%= @goat_ad.price_per_day %> </p>
-<%#=     <p> <%= @goat_ad.features %> </p>
-<%#=     <p> <%= @goat_ad.medias %> </p>
-<%#=     <p> <%= @goat_ad.start_available %> </p>
-<%#=     <p> <%= @goat_ad.end_available %> </p>
+  <div class="booking-card" style="width: 22rem;">
+      <div class="card-body">
+        <h5 class="booking-card-price"><%= @goat_ad.price_per_day %>€ /day</h5>
+        <%= simple_form_for [ @goat_ad, @booking ] do |f| %>
+          <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.button :submit, "Book now", class: "btn btn-dark btn-block" %>
+        <% end %>
+    </div>
 </div>
+
+
+
+  <%#=    <h2> <%= @goat_ad.name %> </h2>
+  <%#=     <p> <%= @goat_ad.age %> </p>
+  <%#=     <p> <%= @goat_ad.address %> </p>
+  <%#=     <p> <%= @goat_ad.longitude %> </p>
+  <%#=    <p> <%= @goat_ad.latitude %> </p>
+  <%#=     <p> <%= @goat_ad.description %> </p>
+  <%#=     <p> <%= @goat_ad.price_per_day %> </p>
+  <%#=     <p> <%= @goat_ad.features %> </p>
+  <%#=     <p> <%= @goat_ad.medias %> </p>
+  <%#=     <p> <%= @goat_ad.start_available %> </p>
+  <%#=     <p> <%= @goat_ad.end_available %> </p>
+  </div>
