@@ -27,74 +27,77 @@ h3{
   margin-top: 15px;
 }
 
-.navigation {
-  width:80%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  height: 50px;
-  background-color: white;
-}
+// .navigation {
+//   width:80%;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+//   height: 50px;
+//   background-color: white;
+// }
 
-.navigation a{
-  text-decoration:none;
-}
+// .navigation a{
+//   text-decoration:none;
+// }
 
-.navigation  li{
-  display:inline;
-  padding: 0 20px 0 20px;
-}
-.navigation  li .search_bar{
-  padding: 5px 30px;
-  border-radius: 5px;
-}
+// .navigation  li{
+//   display:inline;
+//   padding: 0 20px 0 20px;
+// }
+// .navigation  li .search_bar{
+//   padding: 5px 30px;
+//   border-radius: 0px;
+// }
 
-.navigation  #branding{
-  float:left;
-  padding-left: 20px;
-  margin-top:15px;
-}
+// .navigation  #branding{
+//   float:left;
+//   padding-left: 20px;
+//   margin-top:15px;
+// }
 
-.navigation  #branding h1{
-	font-size:14px;
-	margin-top:15px;
-}
+// .navigation  #branding h1{
+// 	font-size:14px;
+// 	margin-top:15px;
+// }
 
-.navigation  nav{
-  float:right;
-  margin-top:15px;
-  font-size:14px;
-}
+// .navigation  nav{
+//   float:right;
+//   margin-top:15px;
+//   font-size:14px;
+// }
 
-.navigation  .highlight, .navigation  .current a{
-  color:rgb(36, 87, 6);
-}
+// .navigation  .highlight, .navigation  .current a{
+//   color:rgb(36, 87, 6);
+// }
 
-.navigation  a:hover{
-  color:#000000;
-  font-size: 14px;
-  text-decoration: none
-}
+// .navigation  a:hover{
+//   color:#000000;
+//   font-size: 14px;
+//   text-decoration: none
+// }
 
 .banner{
-  padding: 200px 300px;
   display: flex;
-  justify-content: center;
   position: relative;
+  align-items: center;
+  width: 1000px;
+  height: 50vh;
+  z-index: 1;
 }
 .container-box1{
-  width: 70%;
-  padding-left: 40px;
-
+  width: 40%;
+  z-index: 3;
 }
 .container-box2{
-  width: 30%;
+  width: 20%;
   padding-bottom: 150px;
+  z-index: 1;
 }
 
 .container-box2 img{
   position: absolute;
-  right:270px;
-  top:110px;
+  width:40%;
+  right:50px;
+  top:40px;
 }
 
 .container li {
@@ -103,18 +106,10 @@ h3{
 }
 
 .container-box{
-  width: 1220px;
+  width: 1000px;
   margin:20px auto;
   display: block;
-}
-
-.searchgoat {
-  padding: 15px;
-  margin: -30px;
-  border-radius: 20px;
-  border: 0px solid rgb(14, 14, 14);
-  background: rgb(240, 239, 239);
-
+  z-index: 3;
 }
 
 .form {
@@ -223,6 +218,10 @@ h3{
   justify-content: space-around;
   width:80%;
 
+}
+
+a.text-decoration-none {
+  font-size:30px;
 }
 
 
