@@ -189,10 +189,11 @@ h3{
 }
 
 .card{
-  border-radius: 20px;
   border:0px solid;
   margin: 10px;
-  height: 400px;
+  background: white;
+  height:400px;
+  border-radius:10px;
   box-shadow:
   0 12.5px 10px rgba(0, 0, 0, 0.035),
   0 100px 80px rgba(0, 0, 0, 0.07);

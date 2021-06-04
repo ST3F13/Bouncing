@@ -1,12 +1,12 @@
 .card {
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 200px;
   // width: 40%;
   // border-radius: 10px;
   margin: 10px;
   display: flex;
-  align-items: center;
+  text-align:center;
   text-transform: capitalize;
 }
 
@@ -23,7 +23,6 @@
 .content {
   min-height: 100vh;
   h1 {
-    margin-left: 40px;
     color: #343A40;
   }
 }
@@ -37,6 +36,7 @@
 
 .card-info {
   h3 {
+    font-size: 20px;
     color: #343A40;
   }
   padding-left: 20px;
@@ -45,7 +45,7 @@
     color: #343A40;
     font-size: 12px;
   }
-  h6 {
+  span {
     color: #27A351;
   }
 }
@@ -56,6 +56,10 @@
 
 .container_card{
   display: flex;
+}
+
+.content{
+  padding-left: 100px;
 }
 
 
