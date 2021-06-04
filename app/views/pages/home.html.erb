@@ -19,10 +19,12 @@
  <h6><em>Goats are specialized professionnals - Find the one you need !</em></h6>
 
 <div class="cards1">
- <% features_collection.each do |feature| %>
-     <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= link_to feature, goat_ads_path(feature: feature), class: "text-decoration-none" %>
-    </div>
-  <% end %>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1613846043689-afad9cb6317d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80)"> <%= link_to "fighter", goat_ads_path(feature: fighter), class: "text-decoration-none" %></div>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1602153508683-b5bc610271d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)"> <%= link_to "milker", goat_ads_path(feature: milker), class: "text-decoration-none" %></div>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1567017497423-2de680cc04b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)"> <%= link_to "mower", goat_ads_path(feature: mower), class: "text-decoration-none" %></div>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1603602943247-93dc0c81a932?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80)"> <%= link_to "sociable", goat_ads_path(feature: sociable), class: "text-decoration-none" %></div>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1469&q=80)"> <%= link_to "space-traveller", goat_ads_path(feature: space_traveller), class: "text-decoration-none" %></div>
+
  </div>
 
 </div>
@@ -41,7 +43,7 @@ Elected by our customers, the bests of the bests !
     <div class="card-img-top">
       <%= link_to goat_ad do %>
       <% goat_ad.medias.first(1).each do |media| %>
-      <%= cl_image_tag media.key, height: 200, width: 200, crop: :fill%>
+      <%= cl_image_tag media.key, height: 200, width: 200, crop: :fit%>
       <% end %>
 
       <% end %>
