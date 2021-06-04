@@ -16,7 +16,7 @@ h1,h3{
 h1{
   font-size: 46px;
 }
-.container-box h1 {
+.container-box-4 h1 {
   padding-top:10px;
   font-size: 24px;
 }
@@ -35,7 +35,7 @@ h1{
 }
 
 
-.container-box p {
+.container-box-4 p {
   padding-top:5px;
   font-size: 12px;
   font-weight: lighter;
@@ -130,6 +130,13 @@ h3{
 }
 
 .container-box{
+  width: 1000px;
+  margin:20px auto;
+  display: block;
+  z-index: 3;
+}
+
+.container-box-4{
   width: 1000px;
   margin:20px auto;
   display: block;
