@@ -3,32 +3,36 @@
   <div class="container-box1">
   <h1>Get your goat </h1>
   <h2>      & got your guest</h2>
-  
     <div class="form">
     </div>
-    
   </div>
   <div class="container-box2">
   <img src="https://lh3.googleusercontent.com/proxy/dA0sKTrfzKrHumi6FpnWPqB5Xs_AxrdazEcDp-TQQeouh3eW9Lq1V63tVwo9k82YCk6ortVkilvr3xV-OHdBIkQXlKds4sCKZT4R6WsYijpzyoswWJDOoTy6aNGyTP9IqTN9nZE7zlK479-V" alt="">
   </div>
 </div>
-</div>
 
-
+<br>
+<br>
 <div class="container-box">
-<h3>Top category</h3>
-<div class="cards1">
- <% features_collection.each do |feature| %>
-     <div class="card-category" style="background-image: url(https://source.unsplash.com/featured/?goat)"> <%= link_to feature, goat_ads_path(feature: feature), class: "text-decoration-none" %>
-    </div>
-  <% end %>
+<h3>Top categories</h3>
+<br>
+ <h6><em>Goats are specialized professionnals - Find the one you need !</em></h6>
 
+<div class="cards1">
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1613846043689-afad9cb6317d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80)"> <%= link_to "fighter", goat_ads_path(feature: fighter), class: "text-decoration-none" %></div>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1602153508683-b5bc610271d6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)"> <%= link_to "milker", goat_ads_path(feature: milker), class: "text-decoration-none" %></div>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1567017497423-2de680cc04b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)"> <%= link_to "mower", goat_ads_path(feature: mower), class: "text-decoration-none" %></div>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1603602943247-93dc0c81a932?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80)"> <%= link_to "sociable", goat_ads_path(feature: sociable), class: "text-decoration-none" %></div>
+     <div class="card-category" style="background-image: url(https://images.unsplash.com/photo-1614728263952-84ea256f9679?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1469&q=80)"> <%= link_to "space-traveller", goat_ads_path(feature: space_traveller), class: "text-decoration-none" %></div>
 
  </div>
+
 </div>
 
 <div class="container-box">
-<h3>Most popular</h3>
+<h3>Goats of the month</h3>
+<br>
+Elected by our customers, the bests of the bests !
 <div class="cards">
 
 <% @goat_ads.each do |goat_ad| %>
@@ -39,7 +43,7 @@
     <div class="card-img-top">
       <%= link_to goat_ad do %>
       <% goat_ad.medias.first(1).each do |media| %>
-      <%= cl_image_tag media.key, height: 200, width: 200, crop: :fill%>
+      <%= cl_image_tag media.key, height: 200, width: 200, crop: :fit%>
       <% end %>
 
       <% end %>
@@ -48,7 +52,7 @@
     <div class="card-body">
         <h5 class="card-title"><%= goat_ad.name %></h5>
         <p class="card-text"><%=goat_ad.features%></p>
-        <p class="card-text"><%=goat_ad.price_per_day%></p>
+        <p class="card-text"><%=goat_ad.price_per_day%> €</p>
         <%= link_to "Rent now", goat_ad , class: "btn btn-dark" %>
     </div>
 
