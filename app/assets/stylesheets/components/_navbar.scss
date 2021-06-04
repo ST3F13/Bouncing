@@ -1,3 +1,6 @@
+.navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
+  width: 1200px;;
+}
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -7,17 +10,19 @@
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
+h4{
+  padding-top:22px;
+}
 .navbar-lewagon .navbar-brand img {
-  margin-top: 10px;
-  width: 50px;
-  margin-right:250px;
+  margin-top: 5px;
+  width: 55px;
 }
 
-
+.navbar-brand{
+  display:inline;
+}
 .navbar-lewagon  li{
   display:inline;
-  padding: 0 20px 0 20px;
 }
 
 li.current{
@@ -30,11 +35,16 @@ li.current a{
 }
 
 .navbar-lewagon  li .search_bar{
-  padding: 5px 30px;
-  border: 10px;
-  border-radius: 15px;
+  padding: 6px 30px;
+  border: 10px 5px;
+  border-radius: 5px;
   border: 0.5px solid rgb(240, 239, 239);
 }
+
+.collapse.navbar-collapse li{
+  padding-right:15px;
+}
+
 
 // .navbar-minimalist {
 //   height: 70px;
